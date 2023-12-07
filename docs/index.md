@@ -19,8 +19,8 @@ As a second example, consider operating a bank where ensuring the integrity of d
 Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables).
 1. **Cable Interception (Wire Tapping)**: 
 A potential attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information.
-**Possible Counter-Strategy**:
-Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker may have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.
+**Counter-Strategy**:
+Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.
 
 ## Strategies for Network Security
 ### Physical Security Strategies
