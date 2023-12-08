@@ -1,9 +1,8 @@
 # Network Security Strategies and Applications
 This docs is created as a homework for the lecture: Network Security with Open Source Tools
-## Intoduction
-### Definition of Network Security
+## Definition of Network Security
 Network security refers to the set of measures, policies and practices designed to protect the integrity, confidentiality and availability of computer networks and the data they transmit and store. [Source](https://study.com/academy/lesson/what-is-network-security-definition-fundamentals.html)
-### Importance of Network Security
+## Importance of Network Security
 In the definition above, network security was outlined as a framework designed to protect the integrity, confidentiality and the availability of computer networks. Let's delve into the significance of each of these elements:
 
 1. **Integrity**: Integrity refers to preserving the unaltered state of data free from unauthorized disruptions. 
@@ -18,16 +17,22 @@ As a second example, consider operating a bank where ensuring the integrity of d
 **Note**: Given that networks depend on communication among numerous computers, securing individual computers is an important part within network security. Consequently, some of the attacks and counter-strategies mentioned below might appear more closely associated with computer security rather than network security.
 ### Physical Attacks
 Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.
+
 1. **Cable Interception (Wire Tapping)**: 
 The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information.
-**Counter-Strategy**:
-Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data. 
+
+    **Counter-Strategy**
+
+    - Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.
+    
 2. **Inserting a malicious USB**:
 If the attacker has physical access to a computer, they could boot from their own USB drive and insert malicious code in low-level software like bios. As most antivirus softwares work on operating system, they won't easily be able to detect software that is running below operating system layer. Such malicious code could be used to open a back-door and get remote access to the computer.
 
-    **Counter-Strategies**:
-        * Disabling un-used usb ports
-        * Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.
+    **Counter-Strategies**
+        
+    - Disabling un-used usb ports
+
+    - Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.
 
 ### Staff-based Attacks
 1. **Phishing**:
@@ -35,28 +40,44 @@ There are two common methods of phishing, and their initial stages are similar. 
 
     **a)** The attacker may replicate a familiar website, creating a fraudulent user interface identical to the original. When an authorized staff member, with access to sensitive information, enters data into a form on the fake website, the attacker gains access to the sensitive data, using the staff member's password.
     **b)** Alternatively, the attacker could set the website to automatically download malicious software onto the target's computer. That's a significant risk if the target's browser permits the automatic download and execution of JavaScript.
-**Counter-Strategies**: 
-a) Training staff to exercise caution with incoming emails, avoiding clicking on links and always verifying the sender's email address.
-b) Configuring staff browsers to prompt users before executing JavaScript or downloading files automatically.
-c) Implementing firewalls to detect and block packets from and to suspicious websites.
-d) Employing anti-malware software to identify and remove malware proactively. Such software can cross-reference downloaded files with a known malware database before permitting execution, adding an extra layer of security.
+
+    **Counter-Strategies**
+    
+    - Training staff to exercise caution with incoming emails, avoiding clicking on links and always verifying the sender's email address.
+    
+    - Configuring staff browsers to prompt users before executing JavaScript or downloading files automatically.
+    
+    - Implementing firewalls to detect and block packets from and to suspicious websites.
+    
+    - Employing anti-malware software to identify and remove malware proactively. Such software can cross-reference downloaded files with a known malware database before permitting execution, adding an extra layer of security.
 
 ### Software-based Attacks
 1. **Malwares**
 Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.
-**Counter-Strategies**
-    * Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.
-    * Firewalls could be installed to selecctively block traffic from websites that are not in the trusted list.
-    * Software could be kept up-to-date as new updates tend to patch existing security vulnerabilities.
-    * Intrusion Detection Systems (IDSs) could be used to analyze the contents of incoming and outgoing packages and block suspicious packages from passing.
-    * A distributed and well-defined authority structure in the network could prevents attackers from getting full control over the network by just infecting a small percentage of network participants.
+
+    **Counter-Strategies**
+
+    - Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.
+
+    - Firewalls could be installed to selecctively block traffic from websites that are not in the trusted list.
+
+    - Software could be kept up-to-date as new updates tend to patch existing security vulnerabilities.
+
+    - Intrusion Detection Systems (IDSs) could be used to analyze the contents of incoming and outgoing packages and block suspicious packages from passing.
+
+    - A distributed and well-defined authority structure in the network could prevents attackers from getting full control over the network by just infecting a small percentage of network participants.
 
 ### Network-based Attacks
 1. **DDoS (Distributed Denial of Service) attacks**
 A Distributed Denial of Service (DDoS) attack involves an initial stage where the attacker compromises a substantial number of independent small computers (called zombie computers). Then, the attacker uses the infected zombie computers to send a multitude of requests to a server, simultaneously. As a result of the sheer number of requests (from zombie computers), server may become unable to respond to legitimate requests. Consequently, this orchestrated flood of traffic can lead to network collapse, undermining the availability of services. For entities dependent on continuous and uninterrupted operation (like banking networks), DDoS attacks pose a significant and disruptive threat.
-**Counter-Strategies**
-    * Load-balancing techniques can be used to distribute the traffic across multiple servers, so that the service can handle more requests
-    * IP addresses that any user haven't registered with but are actively used to make requests could be blocked.
-    * The amount of request a single IP adress makes can be limited, ignoring the over-the-limit requests
-    * If majority of requests are coming from a certain region, the server could automatically reject requests from that region for some time. This could prevent the service from collapsing all around the world.
+
+    **Counter-Strategies**
+
+    - Load-balancing techniques can be used to distribute the traffic across multiple servers, so that the service can handle more requests.
+
+    - IP addresses that any user haven't registered with but are actively used to make requests could be blocked.
+
+    - The amount of request a single IP address makes can be limited, ignoring the over-the-limit requests.
+
+    - If the majority of requests are coming from a certain region, the server could automatically reject requests from that region for some time. This could prevent the service from collapsing all around the world.
 
