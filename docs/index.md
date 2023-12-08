@@ -83,8 +83,8 @@ A Distributed Denial of Service (DDoS) attack involves an initial stage where th
 
 2. **DNS Spoofing Attack**
 In a network, each computer is assigned an IP address for identification. Since directly remembering IP addresses can be challenging, DNS servers have been developed to translate textual addresses to corresponding IP addresses. These servers convert user-friendly textual addresses (e.g., http://www.google.com) into their corresponding IP addresses (e.g., 142.251.209.46 for Google).
-
 A fake DNS attack commonly involves the attacker positioning themselves between the user and the DNS server, redirecting the user to a malicious website designed to mimic the appearance of the intended site. In this type of attack, a typical user may not readily discern that they have landed on a fraudulent website since the URL in the browser's top bar still displays the correct textual address. Consequently, users may unknowingly provide sensitive information to the attackers.
 
-**Counter-Measure**
-- By using Domain Name System Security Extensions (DNSSEC), the communication with DNSSEC is signed. Therefore, the user's computer can verify whether the DNS record sent by the server is from the registrar itself.
+    **Counter-Measure**
+    
+    - By using Domain Name System Security Extensions (DNSSEC), the communication with DNSSEC is signed. Therefore, the user's computer can verify whether the DNS record sent by the server is from the registrar itself.
