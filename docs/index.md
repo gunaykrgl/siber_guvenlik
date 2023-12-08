@@ -12,12 +12,12 @@ As a second example, consider operating a bank where ensuring the integrity of d
 
 2. **Confidentiality**: Confidentiality is characterized by preserving secrets and preventing unauthorized read access to sensitive data. To underscore its significance, envision a scenario where a prominent game studio is developing the next game in their popular franchise. With potentially thousands of employees collabarating on the project, crucial game files are likely exchanged via the local network. Additionally, if remote working opportunities are provided, the game data will also be needed to be exchanged through global internet. The lack of confidentiality in the network could result in leakage of game data before its intended release date undermining the effect of the planned trailer. In that case, the importance of confidentiality can clearly be seen. 
 
-3. Availability: Availability is characterized by the continuous accessibility of data and services at all times. To underscore its significance, envision a scenario where a bank offers payment services connecting customers with local merchants or stores. These payment services are expected to operate 24/7. To ensure their continuous operation, they must establish a connection to the mainframe server or a node (in distributed systems). The absence of availability could result in transactions being unable to process, potentially driving customers towards alternative payment service providers. The importance of availability, therefore, lies in maintaining uninterrupted and reliable access to services, particularly in sectors where round-the-clock operation is essential for meeting customer expectations and sustaining competitiveness.
+3. **Availability**: Availability is characterized by the continuous accessibility of data and services at all times. To underscore its significance, envision a scenario where a bank offers payment services connecting customers with local merchants or stores. These payment services are expected to operate 24/7. To ensure their continuous operation, they must establish a connection to the mainframe server or a node (in distributed systems). The absence of availability could result in transactions being unable to process, potentially driving customers towards alternative payment service providers. The importance of availability, therefore, lies in maintaining uninterrupted and reliable access to services, particularly in sectors where round-the-clock operation is essential for meeting customer expectations and sustaining competitiveness.
 
 ## Possible Attacks and Counter-Strategies
 **Note**: Given that networks depend on communication among numerous computers, securing individual computers is an important part within network security. Consequently, some of the attacks and counter-strategies mentioned below might appear more closely associated with computer security rather than network security.
 ### Physical Attacks
-Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables).
+Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.
 1. **Cable Interception (Wire Tapping)**: 
 The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information.
 **Counter-Strategy**:
@@ -25,24 +25,28 @@ Utilizing TLS encryption can impede an attacker's capacity to gather sensitive i
 2. **Inserting a malicious USB**:
 If the attacker has physical access to a computer, they could boot from their own USB drive and insert malicious code in low-level software like bios. As most antivirus softwares work on operating system, they won't easily be able to detect software that is running below operating system layer. Such malicious code could be used to open a back-door and get remote access to the computer.
 
-**Counter-Strategy**:
-* Disabling un-used usb ports
-* Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.
+    **Counter-Strategies**:
+        * Disabling un-used usb ports
+        * Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.
 
 ### Staff-based Attacks
-**Phishing**:
+1. **Phishing**:
 There are two common methods of phishing, and their initial stages are similar. Initially, the attacker sends an email to the target from an address that closely resembles the actual email address of a known individual (e.g., the imitating email could be emily_1awson@gmail.com, while the original is emily_lawson@gmail.com). The subsequent methods diverge from this point:
 
-**a)** The attacker may replicate a familiar website, creating a fraudulent user interface identical to the original. When an authorized staff member, with access to sensitive information, enters data into a form on the fake website, the attacker gains access to the sensitive data, using the staff member's password.
-**b)** Alternatively, the attacker could set the website to automatically download malicious software onto the target's computer. That's a significant risk if the target's browser permits the automatic download and execution of JavaScript.
+    **a)** The attacker may replicate a familiar website, creating a fraudulent user interface identical to the original. When an authorized staff member, with access to sensitive information, enters data into a form on the fake website, the attacker gains access to the sensitive data, using the staff member's password.
+    **b)** Alternatively, the attacker could set the website to automatically download malicious software onto the target's computer. That's a significant risk if the target's browser permits the automatic download and execution of JavaScript.
 **Counter-Strategies**: 
 a) Training staff to exercise caution with incoming emails, avoiding clicking on links and always verifying the sender's email address.
 b) Configuring staff browsers to prompt users before executing JavaScript or downloading files automatically.
 c) Implementing firewalls to detect and block packets from and to suspicious websites.
 d) Employing anti-malware software to identify and remove malware proactively. Such software can cross-reference downloaded files with a known malware database before permitting execution, adding an extra layer of security.
 
-## Strategies for Network Security
-### Physical Security Strategies
-### People-based Security Strategies
-### Software-based Security Strategies
-### Network-based Security Strategies
+### Software-based Attacks
+1. **Malwares**
+Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.
+**Counter-Strategies**
+    * Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.
+    * Firewalls could be installed to selecctively block traffic from websites that are not in the trusted list.
+    * Software could be kept up-to-date as new updates tend to patch existing security vulnerabilities.
+    * Intrusion Detection Systems (IDSs) could be used to analyze the contents of incoming and outgoing packages and block suspicious packages from passing.
+    * A distributed and well-defined authority structure in the network could prevents attackers from getting full control over the network by just infecting a small percentage of network participants.
