@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Günay</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Günay</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#network-security-strategies-and-applications" class="nav-link">Network Security Strategies and Applications</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#intoduction" class="nav-link">Intoduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#possible-attacks-and-counter-strategies" class="nav-link">Possible Attacks and Counter-Strategies</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#strategies-for-network-security" class="nav-link">Strategies for Network Security</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="network-security-strategies-and-applications">Network Security Strategies and Applications</h1>
+<p>This docs is created as a homework for the lecture: Network Security with Open Source Tools</p>
+<h2 id="intoduction">Intoduction</h2>
+<h3 id="definition-of-network-security">Definition of Network Security</h3>
+<p>Network security refers to the set of measures, policies and practices designed to protect the integrity, confidentiality and availability of computer networks and the data they transmit and store. <a href="https://study.com/academy/lesson/what-is-network-security-definition-fundamentals.html">Source</a></p>
+<h3 id="importance-of-network-security">Importance of Network Security</h3>
+<p>In the definition above, network security was outlined as a framework designed to protect the integrity, confidentiality and the availability of computer networks. Let's delve into the significance of each of these elements:</p>
+<ol>
+<li>
+<p><strong>Integrity</strong>: Integrity refers to preserving the unaltered state of data free from unauthorized disruptions. 
+To illustrate the importance of data integrity, consider an algorithmic trading bot that relies on data fetched by a third-party provider. Imagine a scenario where a malicious user intercepts and modifies the price data transmitted via the API. Such an attack could compromise the data's integrity, leading to the algorithmic trading bot to execute an incorrect market order, potentially resulting in significant financial losses. 
+As a second example, consider operating a bank where ensuring the integrity of data exchanged between ATM machines and the mainframe server is crucial. Now, consider a scenario that, a malicious agent could alter the <strong><em>amount</em></strong> data in the withdrawal request to the mainframe server. Such an act could result in malicious agent withdrawing more money than what was available in their account leading to a fraud. These examples emphasizes the significance of data integrity in various contexts.</p>
+</li>
+<li>
+<p><strong>Confidentiality</strong>: Confidentiality is characterized by preserving secrets and preventing unauthorized read access to sensitive data. To underscore its significance, envision a scenario where a prominent game studio is developing the next game in their popular franchise. With potentially thousands of employees collabarating on the project, crucial game files are likely exchanged via the local network. Additionally, if remote working opportunities are provided, the game data will also be needed to be exchanged through global internet. The lack of confidentiality in the network could result in leakage of game data before its intended release date undermining the effect of the planned trailer. In that case, the importance of confidentiality can clearly be seen. </p>
+</li>
+<li>
+<p>Availability: Availability is characterized by the continuous accessibility of data and services at all times. To underscore its significance, envision a scenario where a bank offers payment services connecting customers with local merchants or stores. These payment services are expected to operate 24/7. To ensure their continuous operation, they must establish a connection to the mainframe server or a node (in distributed systems). The absence of availability could result in transactions being unable to process, potentially driving customers towards alternative payment service providers. The importance of availability, therefore, lies in maintaining uninterrupted and reliable access to services, particularly in sectors where round-the-clock operation is essential for meeting customer expectations and sustaining competitiveness.</p>
+</li>
+</ol>
+<h2 id="possible-attacks-and-counter-strategies">Possible Attacks and Counter-Strategies</h2>
+<h3 id="physical-attacks">Physical Attacks</h3>
+<p>Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables).
+1. <strong>Cable Interception (Wire Tapping)</strong>: 
+A potential attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information.
+<strong>Counter-Strategy</strong>:
+Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.</p>
+<h2 id="strategies-for-network-security">Strategies for Network Security</h2>
+<h3 id="physical-security-strategies">Physical Security Strategies</h3>
+<h3 id="people-based-security-strategies">People-based Security Strategies</h3>
+<h3 id="software-based-security-strategies">Software-based Security Strategies</h3>
+<h3 id="network-based-security-strategies">Network-based Security Strategies</h3></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2023-12-08 11:58:09.544243+00:00
+-->
