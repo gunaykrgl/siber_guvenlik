@@ -19,18 +19,21 @@ As a second example, consider operating a bank where ensuring the integrity of d
 Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.
 
 1. **Cable Interception (Wire Tapping)**: 
-The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information.
+The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information (Compromising CONFIDENTIALITY).
 
     **Counter-Strategy**
 
     - Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.
     
 2. **Inserting a malicious USB**:
-If the attacker has physical access to a computer, they could boot from their own USB drive and insert malicious code in low-level software like bios. As most antivirus softwares work on operating system, they won't easily be able to detect software that is running below operating system layer. Such malicious code could be used to open a back-door and get remote access to the computer.
+If an attacker gains physical access to a computer, they can employ various tactics, such as booting from a USB drive and injecting malicious code into low-level software like the BIOS. Since most antivirus software operates at the operating system level, it becomes challenging to detect malicious code running below this layer. This type of code can establish a backdoor, granting the attacker remote access to the compromised computer. Additionally, if the disk is not encrypted, the attacker can freely read all the data stored on the computer.
+Consider a real-life scenario where an attacker adopts the guise of a cleaning worker. Seizing an opportunity when an executive is away from their computer, the attacker inserts a USB drive to execute a script. This script, operating within a live-USB Linux distribution, clandestinely copies all the data from the computer's disk onto the USB drive.
 
     **Counter-Strategies**
         
     - Disabling un-used usb ports
+
+    - Encrypting the disks
 
     - Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.
 
