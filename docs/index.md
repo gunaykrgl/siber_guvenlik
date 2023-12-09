@@ -1,18 +1,25 @@
 # Network Security Strategies and Applications
-**Repository link:https://github.com/gunaykrgl/siber_guvenlik/**
-
 This docs is created as a homework for the lecture: Network Security with Open Source Tools.
 
 Below are specific topics that are mentioned throughout the document
-The Topics:
+
+**The Topics**:
+
 1. Network Security Strategies
+
     a) Importance of physical, software-based and network security strategies
     b) Strategic approaches for maintaining data safety
+
 2. Importance of Network Security Applications and Tools
+
     a) Importance of basic security applications like Firewalls, IDS/IPS, anti-virus software
+
     b) Importance of cryptography and encrypton tools
+
 3. Current network security problems and solutions
+
     a) DDos attacks and data breaches
+
 ## Definition of Network Security
 Network security refers to the set of measures, policies and practices designed to protect the integrity, confidentiality and availability of computer networks and the data they transmit and store. [Source](https://study.com/academy/lesson/what-is-network-security-definition-fundamentals.html)
 ## Importance of Network Security
@@ -131,6 +138,7 @@ Various attacks have been detailed in the preceding chapters, primarily focusing
 
 ## References
 
+**Repository link**: [siber_guvenlik, github](https://github.com/gunaykrgl/siber_guvenlik/)
 
 The definitions for confidentiality, integrity and authenticity are taken from the following link:
 [CIA Triad, unitrends](
