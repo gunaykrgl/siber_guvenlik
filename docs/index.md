@@ -15,6 +15,8 @@ As a second example, consider operating a bank where ensuring the integrity of d
 
 ## Possible Attacks and Counter-Strategies
 **Note**: Given that networks depend on communication among numerous computers, securing individual computers is an important part within network security. Consequently, some of the attacks and counter-strategies mentioned below might appear more closely associated with computer security rather than network security.
+**Note**:  restricting permissions to only necessary interactions between nodes in the network contributes to a more distributed system, minimizing the impact of successful attacks on a single node. Since, this is related to the overall software architecture, this information is provided independently of specific attack. 
+
 ### Physical Attacks
 Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.
 
