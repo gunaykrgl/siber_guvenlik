@@ -63,6 +63,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#conclusion" class="nav-link">Conclusion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -90,13 +94,14 @@ As a second example, consider operating a bank where ensuring the integrity of d
 </li>
 </ol>
 <h2 id="possible-attacks-and-counter-strategies">Possible Attacks and Counter-Strategies</h2>
-<p><strong>Note</strong>: Given that networks depend on communication among numerous computers, securing individual computers is an important part within network security. Consequently, some of the attacks and counter-strategies mentioned below might appear more closely associated with computer security rather than network security.</p>
+<p><strong>Note</strong>: Given that networks depend on communication among numerous computers, securing individual computers is an important part within network security. Consequently, some of the attacks and counter-strategies mentioned below might appear more closely associated with computer security rather than network security.
+<strong>Note</strong>:  restricting permissions to only necessary interactions between nodes in the network contributes to a more distributed system, minimizing the impact of successful attacks on a single node. Since, this is related to the overall software architecture, this information is provided independently of specific attack. </p>
 <h3 id="physical-attacks">Physical Attacks</h3>
 <p>Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.</p>
 <ol>
 <li>
 <p><strong>Cable Interception (Wire Tapping)</strong>: 
-The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information.</p>
+The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information (Compromising CONFIDENTIALITY).</p>
 <p><strong>Counter-Strategy</strong></p>
 <ul>
 <li>Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.</li>
@@ -104,11 +109,15 @@ The attacker may sever a cable at a specific location and deploy a device, such 
 </li>
 <li>
 <p><strong>Inserting a malicious USB</strong>:
-If the attacker has physical access to a computer, they could boot from their own USB drive and insert malicious code in low-level software like bios. As most antivirus softwares work on operating system, they won't easily be able to detect software that is running below operating system layer. Such malicious code could be used to open a back-door and get remote access to the computer.</p>
+If an attacker gains physical access to a computer, they can employ various tactics, such as booting from a USB drive and injecting malicious code into low-level software like the BIOS. Since most antivirus software operates at the operating system level, it becomes challenging to detect malicious code running below this layer. This type of code can establish a backdoor, granting the attacker remote access to the compromised computer. Additionally, if the disk is not encrypted, the attacker can freely read all the data stored on the computer.
+Consider a real-life scenario where an attacker adopts the guise of a cleaning worker. Seizing an opportunity when an executive is away from their computer, the attacker inserts a USB drive to execute a script. This script, operating within a live-USB Linux distribution, clandestinely copies all the data from the computer's disk onto the USB drive. (Compromising CONFIDENTIALITY)</p>
 <p><strong>Counter-Strategies</strong></p>
 <ul>
 <li>
 <p>Disabling un-used usb ports</p>
+</li>
+<li>
+<p>Encrypting the disks</p>
 </li>
 <li>
 <p>Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.</p>
@@ -116,14 +125,16 @@ If the attacker has physical access to a computer, they could boot from their ow
 </ul>
 </li>
 </ol>
-<h3 id="staff-based-attacks">Staff-based Attacks</h3>
+<h3 id="social-engineering-based-attacks">Social Engineering based Attacks</h3>
+<p>Social engineering based attacks encapsulate attacks that exploit the psychology of the target person. These kinds of attacks are one of <strong>the most</strong> prevalent attacks as manipulating human psychology and emotions tends to be easier than finding and exploting a software or hardware vulnerability. Some of the common counter-measurements against this type of attack involves educating the staff to always be cautious and informed. </p>
 <ol>
 <li>
 <p><strong>Phishing</strong>:
 There are two common methods of phishing, and their initial stages are similar. Initially, the attacker sends an email to the target from an address that closely resembles the actual email address of a known individual (e.g., the imitating email could be emily_1awson@gmail.com, while the original is emily_lawson@gmail.com). The subsequent methods diverge from this point:</p>
 <p><strong>a)</strong> The attacker may replicate a familiar website, creating a fraudulent user interface identical to the original. When an authorized staff member, with access to sensitive information, enters data into a form on the fake website, the attacker gains access to the sensitive data, using the staff member's password.
 <strong>b)</strong> Alternatively, the attacker could set the website to automatically download malicious software onto the target's computer. That's a significant risk if the target's browser permits the automatic download and execution of JavaScript.</p>
-<p><strong>Counter-Strategies</strong></p>
+<p>(Compromising CONFIDENTIALITY)
+<strong>Counter-Strategies</strong></p>
 <ul>
 <li>
 <p>Training staff to exercise caution with incoming emails, avoiding clicking on links and always verifying the sender's email address.</p>
@@ -137,6 +148,15 @@ There are two common methods of phishing, and their initial stages are similar. 
 <li>
 <p>Employing anti-malware software to identify and remove malware proactively. Such software can cross-reference downloaded files with a known malware database before permitting execution, adding an extra layer of security.</p>
 </li>
+<li><strong>Guessing the password</strong>
+This is generally <strong>not considered</strong> a type of attack as it is based more on passively trying possible passwords. However, it is still considered one of the most common method of stealing sensitive data.
+Most people use easy-to-guess passwords like "12345678" and "password". Additionally, it is common for people to incorporate their personal information like name, birtplace or birthdate in their passwords. Furthermore, using the same password in multiple places is also commonplace. Using the same password across multiple places poses a security risk if one of the websites that the user was using the same password gets compromised.
+(Compromising CONFIDENTIALITY)
+<strong>Counter-Strategies</strong></li>
+<li>Using 2 or 3-factor authentication </li>
+<li>Providing a limited number of (like 3) wrong password entries</li>
+<li>Instructing the staff about using certain password managers, so that they can just memorise a single password to decrypt multiple passwords </li>
+<li>Instructing the staff to always check the authenticity of the website before entering their passwords.</li>
 </ul>
 </li>
 </ol>
@@ -144,8 +164,9 @@ There are two common methods of phishing, and their initial stages are similar. 
 <ol>
 <li>
 <p><strong>Malwares</strong>
-Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.</p>
-<p><strong>Counter-Strategies</strong></p>
+Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.
+(Could be used to compromise INTEGRITY, CONFIDENTIALITY OR AVAILABILITY)
+    <strong>Counter-Strategies</strong></p>
 <ul>
 <li>
 <p>Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.</p>
@@ -169,8 +190,9 @@ Malware is a broad term used to describe any type of malicious software. Such so
 <ol>
 <li>
 <p><strong>DDoS (Distributed Denial of Service) attacks</strong>
-A Distributed Denial of Service (DDoS) attack involves an initial stage where the attacker compromises a substantial number of independent small computers (called zombie computers). Then, the attacker uses the infected zombie computers to send a multitude of requests to a server, simultaneously. As a result of the sheer number of requests (from zombie computers), server may become unable to respond to legitimate requests. Consequently, this orchestrated flood of traffic can lead to network collapse, undermining the availability of services. For entities dependent on continuous and uninterrupted operation (like banking networks), DDoS attacks pose a significant and disruptive threat.</p>
-<p><strong>Counter-Strategies</strong></p>
+A Distributed Denial of Service (DDoS) attack involves an initial stage where the attacker compromises a substantial number of independent small computers (called zombie computers). Then, the attacker uses the infected zombie computers to send a multitude of requests to a server, simultaneously. As a result of the sheer number of requests (from zombie computers), server may become unable to respond to legitimate requests. Consequently, this orchestrated flood of traffic can lead to network collapse, undermining the availability of services. For entities dependent on continuous and uninterrupted operation (like banking networks), DDoS attacks pose a significant and disruptive threat.
+(Compromising AVAILABILITY)
+    <strong>Counter-Strategies</strong></p>
 <ul>
 <li>
 <p>Load-balancing techniques can be used to distribute the traffic across multiple servers, so that the service can handle more requests.</p>
@@ -189,13 +211,15 @@ A Distributed Denial of Service (DDoS) attack involves an initial stage where th
 <li>
 <p><strong>DNS Spoofing Attack</strong>
 In a network, each computer is assigned an IP address for identification. Since directly remembering IP addresses can be challenging, DNS servers have been developed to translate textual addresses to corresponding IP addresses. These servers convert user-friendly textual addresses (e.g., http://www.google.com) into their corresponding IP addresses (e.g., 142.251.209.46 for Google).
-A fake DNS attack commonly involves the attacker positioning themselves between the user and the DNS server, redirecting the user to a malicious website designed to mimic the appearance of the intended site. In this type of attack, a typical user may not readily discern that they have landed on a fraudulent website since the URL in the browser's top bar still displays the correct textual address. Consequently, users may unknowingly provide sensitive information to the attackers.</p>
+A fake DNS attack commonly involves the attacker positioning themselves between the user and the DNS server, redirecting the user to a malicious website designed to mimic the appearance of the intended site. In this type of attack, a typical user may not readily discern that they have landed on a fraudulent website since the URL in the browser's top bar still displays the correct textual address. Consequently, users may unknowingly provide sensitive information to the attackers. (could be used to compromise INTEGRITY OR CONFIDENTIALITY)</p>
 <p><strong>Counter-Measure</strong></p>
 <ul>
 <li>By using Domain Name System Security Extensions (DNSSEC), the communication with DNSSEC is signed. Therefore, the user's computer can verify whether the DNS record sent by the server is from the registrar itself.</li>
 </ul>
 </li>
-</ol></div>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>Various attacks have been detailed in the preceding chapters, primarily focusing on attacks compromising confidentiality. As emphasized, adopting a proactive stance, educating staff about potential security vulnerabilities, maintaining constant vigilance regarding links in incoming emails, and preventing unauthorized physical access are among the most important pre-measures for ensuring security.</p></div>
             </div>
         </div>
 
@@ -278,5 +302,5 @@ A fake DNS attack commonly involves the attacker positioning themselves between 
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2023-12-08 17:40:58.575927+00:00
+Build Date UTC : 2023-12-09 13:17:40.452709+00:00
 -->
