@@ -102,6 +102,11 @@ Malware is a broad term used to describe any type of malicious software. Such so
 1. **DDoS (Distributed Denial of Service) attacks**
 A Distributed Denial of Service (DDoS) attack involves an initial stage where the attacker compromises a substantial number of independent small computers (called zombie computers). Then, the attacker uses the infected zombie computers to send a multitude of requests to a server, simultaneously. As a result of the sheer number of requests (from zombie computers), server may become unable to respond to legitimate requests. Consequently, this orchestrated flood of traffic can lead to network collapse, undermining the availability of services. For entities dependent on continuous and uninterrupted operation (like banking networks), DDoS attacks pose a significant and disruptive threat.
 (Compromising AVAILABILITY)
+
+    **Common types of DDoS attacks**
+
+    - Application layer attack: Different computers keep sending large number of simple http requests
+    - Protocol attack: Protocol attacks exploit vulnerabilities in 3rd and 4th layers. An example of protocol attacks is SYN flood. In SYN flood, the attacker sends a large number of SYN packets to signify they want to make a TCP connection. Then, the server responds with SYN/ACK packets and starts waiting for an ACK packet. Attacker does not send the SYN/ACK package and causes server to keep an open port with each zombie computer. Once, there is not open ports left for the authentic requests, the server  becomes unable to function normally.
     **Counter-Strategies**
 
     - Load-balancing techniques can be used to distribute the traffic across multiple servers, so that the service can handle more requests.
