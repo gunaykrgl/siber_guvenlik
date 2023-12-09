@@ -1,4 +1,6 @@
 # Network Security Strategies and Applications
+**Repository link:https://github.com/gunaykrgl/siber_guvenlik/**
+
 This docs is created as a homework for the lecture: Network Security with Open Source Tools.
 
 Below are specific topics that are mentioned throughout the document
@@ -32,6 +34,7 @@ As a second example, consider operating a bank where ensuring the integrity of d
 Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.
 
 1. **Cable Interception (Wire Tapping)**: 
+This attack is also known as "Man in the middle Attack" 
 The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information (Compromising CONFIDENTIALITY).
 
     **Counter-Strategy**
@@ -120,3 +123,18 @@ A fake DNS attack commonly involves the attacker positioning themselves between 
 ## Conclusion
 
 Various attacks have been detailed in the preceding chapters, primarily focusing on attacks compromising confidentiality. As emphasized, adopting a proactive stance, educating staff about potential security vulnerabilities, maintaining constant vigilance regarding links in incoming emails, and preventing unauthorized physical access are among the most important pre-measures for ensuring security.
+
+## References
+
+
+The definitions for confidentiality, integrity and authenticity are taken from the following link:
+https://www.unitrends.com/blog/cia-triad-confidentiality-integrity-availability#:~:text=Confidentiality%20measures%20are%20designed%20to,readily%20accessible%20for%20authorized%20parties.
+
+Some information about cable interception section is taken from the following link:
+https://hackinglab.cz/en/blog/wiretapping/
+
+Some information about DNS spoofing and DNSSEC is taken from the following link:
+https://www.imperva.com/learn/application-security/dnssec/
+
+Some information about DDOS attacks are taken from:
+https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/#:~:text=A%20distributed%20denial%2Dof%2Dservice%20(DDoS)%20attack%20is,a%20flood%20of%20Internet%20traffic.
