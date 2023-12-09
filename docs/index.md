@@ -27,7 +27,7 @@ The attacker may sever a cable at a specific location and deploy a device, such 
     
 2. **Inserting a malicious USB**:
 If an attacker gains physical access to a computer, they can employ various tactics, such as booting from a USB drive and injecting malicious code into low-level software like the BIOS. Since most antivirus software operates at the operating system level, it becomes challenging to detect malicious code running below this layer. This type of code can establish a backdoor, granting the attacker remote access to the compromised computer. Additionally, if the disk is not encrypted, the attacker can freely read all the data stored on the computer.
-Consider a real-life scenario where an attacker adopts the guise of a cleaning worker. Seizing an opportunity when an executive is away from their computer, the attacker inserts a USB drive to execute a script. This script, operating within a live-USB Linux distribution, clandestinely copies all the data from the computer's disk onto the USB drive.
+Consider a real-life scenario where an attacker adopts the guise of a cleaning worker. Seizing an opportunity when an executive is away from their computer, the attacker inserts a USB drive to execute a script. This script, operating within a live-USB Linux distribution, clandestinely copies all the data from the computer's disk onto the USB drive. (Compromising CONFIDENTIALITY)
 
     **Counter-Strategies**
         
@@ -46,6 +46,7 @@ There are two common methods of phishing, and their initial stages are similar. 
     **a)** The attacker may replicate a familiar website, creating a fraudulent user interface identical to the original. When an authorized staff member, with access to sensitive information, enters data into a form on the fake website, the attacker gains access to the sensitive data, using the staff member's password.
     **b)** Alternatively, the attacker could set the website to automatically download malicious software onto the target's computer. That's a significant risk if the target's browser permits the automatic download and execution of JavaScript.
 
+    (Compromising CONFIDENTIALITY)
     **Counter-Strategies**
     
     - Training staff to exercise caution with incoming emails, avoiding clicking on links and always verifying the sender's email address.
@@ -58,6 +59,7 @@ There are two common methods of phishing, and their initial stages are similar. 
 2. **Guessing the password**
 This is generally **not considered** a type of attack as it is based more on passively trying possible passwords. However, it is still considered one of the most common method of stealing sensitive data.
 Most people use easy-to-guess passwords like "12345678" and "password". Additionally, it is common for people to incorporate their personal information like name, birtplace or birthdate in their passwords. Furthermore, using the same password in multiple places is also commonplace. Using the same password across multiple places poses a security risk if one of the websites that the user was using the same password gets compromised.
+(Compromising CONFIDENTIALITY)
     **Counter-Strategies**
     - Using 2 or 3-factor authentication 
     - Providing a limited number of (like 3) wrong password entries
@@ -67,7 +69,7 @@ Most people use easy-to-guess passwords like "12345678" and "password". Addition
 ### Software-based Attacks
 1. **Malwares**
 Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.
-
+(Could be used to compromise INTEGRITY, CONFIDENTIALITY OR AVAILABILITY)
     **Counter-Strategies**
 
     - Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.
@@ -83,7 +85,7 @@ Malware is a broad term used to describe any type of malicious software. Such so
 ### Network-based Attacks
 1. **DDoS (Distributed Denial of Service) attacks**
 A Distributed Denial of Service (DDoS) attack involves an initial stage where the attacker compromises a substantial number of independent small computers (called zombie computers). Then, the attacker uses the infected zombie computers to send a multitude of requests to a server, simultaneously. As a result of the sheer number of requests (from zombie computers), server may become unable to respond to legitimate requests. Consequently, this orchestrated flood of traffic can lead to network collapse, undermining the availability of services. For entities dependent on continuous and uninterrupted operation (like banking networks), DDoS attacks pose a significant and disruptive threat.
-
+(Compromising AVAILABILITY)
     **Counter-Strategies**
 
     - Load-balancing techniques can be used to distribute the traffic across multiple servers, so that the service can handle more requests.
@@ -96,7 +98,7 @@ A Distributed Denial of Service (DDoS) attack involves an initial stage where th
 
 2. **DNS Spoofing Attack**
 In a network, each computer is assigned an IP address for identification. Since directly remembering IP addresses can be challenging, DNS servers have been developed to translate textual addresses to corresponding IP addresses. These servers convert user-friendly textual addresses (e.g., http://www.google.com) into their corresponding IP addresses (e.g., 142.251.209.46 for Google).
-A fake DNS attack commonly involves the attacker positioning themselves between the user and the DNS server, redirecting the user to a malicious website designed to mimic the appearance of the intended site. In this type of attack, a typical user may not readily discern that they have landed on a fraudulent website since the URL in the browser's top bar still displays the correct textual address. Consequently, users may unknowingly provide sensitive information to the attackers.
+A fake DNS attack commonly involves the attacker positioning themselves between the user and the DNS server, redirecting the user to a malicious website designed to mimic the appearance of the intended site. In this type of attack, a typical user may not readily discern that they have landed on a fraudulent website since the URL in the browser's top bar still displays the correct textual address. Consequently, users may unknowingly provide sensitive information to the attackers. (could be used to compromise INTEGRITY OR CONFIDENTIALITY)
 
     **Counter-Measure**
     
