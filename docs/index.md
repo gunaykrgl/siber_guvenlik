@@ -103,3 +103,7 @@ A fake DNS attack commonly involves the attacker positioning themselves between 
     **Counter-Measure**
     
     - By using Domain Name System Security Extensions (DNSSEC), the communication with DNSSEC is signed. Therefore, the user's computer can verify whether the DNS record sent by the server is from the registrar itself.
+
+## Conclusion
+
+Various attacks have been detailed in the preceding chapters, primarily focusing on attacks compromising confidentiality. As emphasized, adopting a proactive stance, educating staff about potential security vulnerabilities, maintaining constant vigilance regarding links in incoming emails, and preventing unauthorized physical access are among the most important pre-measures for ensuring security.
