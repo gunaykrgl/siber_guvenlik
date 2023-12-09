@@ -133,18 +133,18 @@ Various attacks have been detailed in the preceding chapters, primarily focusing
 
 
 The definitions for confidentiality, integrity and authenticity are taken from the following link:
-- https://www.unitrends.com/blog/cia-triad-confidentiality-integrity-availability#:~:text=Confidentiality%20measures%20are%20designed%20to,readily%20accessible%20for%20authorized%20parties.
+[CIA Triad, unitrends](
+https://www.unitrends.com/blog/cia-triad-confidentiality-integrity-availability#:~:text=Confidentiality%20measures%20are%20designed%20to,readily%20accessible%20for%20authorized%20parties)
 
 Some information about cable interception section is taken from the following link:
-- https://hackinglab.cz/en/blog/wiretapping/
+[Wire-tapping attacks, hackinglab](https://hackinglab.cz/en/blog/wiretapping/)
 
 Some information about DNS spoofing and DNSSEC is taken from the following link:
-- https://www.imperva.com/learn/application-security/dnssec/
+[DNSSEC, imperva](https://www.imperva.com/learn/application-security/dnssec/)
 
-Some information about DDOS attacks are taken from:
-- https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/#:~:text=A%20distributed%20denial%2Dof%2Dservice%20(DDoS)%20attack%20is,a%20flood%20of%20Internet%20traffic
-- https://www.spiceworks.com/it-security/network-security/guest-article/load-balancers-security-architecture/#:~:text=Load%20balancers%20offer%20an%20extra,exhaust%20resources%20and%20saturate%20links.
+Some information about DDOS attacks are taken from following links:
+[About DDoS ,Cloudflare](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/#:~:text=A%20distributed%20denial%2Dof%2Dservice%20(DDoS)%20attack%20is,a%20flood%20of%20Internet%20traffic
+https://www.spiceworks.com/it-security/network-security/guest-article/load-balancers-security-architecture/#:~:text=Load%20balancers%20offer%20an%20extra,exhaust%20resources%20and%20saturate%20links)
 
 Some information about malwares and counter strategies against malware are taken from:
-- https://www.welivesecurity.com/2015/04/30/ids-firewall-antivirus-need-installed/
-- https://www.xcitium.com/blog/malware/what-is-antimalware/#:~:text=Many%20antimalware%2Dprograms%20are%20designed,it%20flags%20it%20as%20malware.
+[IDS, firewall and Antivirus: What you need to have installed, welivesecurity by eset](https://www.welivesecurity.com/2015/04/30/ids-firewall-antivirus-need-installed/)
