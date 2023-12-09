@@ -34,7 +34,9 @@ If the attacker has physical access to a computer, they could boot from their ow
 
     - Putting surveillance (Cameras) to make sure unauthorized people do not come and insert a USB to the computer.
 
-### Staff-based Attacks
+### Social Engineering based Attacks
+Social engineering based attacks encapsulate attacks that exploit the psychology of the target person. These kinds of attacks are one of **the most** prevalent attacks as manipulating human psychology and emotions tends to be easier than finding and exploting a software or hardware vulnerability. Some of the common counter-measurements against this type of attack involves educating the staff to always be cautious and informed. 
+
 1. **Phishing**:
 There are two common methods of phishing, and their initial stages are similar. Initially, the attacker sends an email to the target from an address that closely resembles the actual email address of a known individual (e.g., the imitating email could be emily_1awson@gmail.com, while the original is emily_lawson@gmail.com). The subsequent methods diverge from this point:
 
@@ -50,6 +52,14 @@ There are two common methods of phishing, and their initial stages are similar. 
     - Implementing firewalls to detect and block packets from and to suspicious websites.
     
     - Employing anti-malware software to identify and remove malware proactively. Such software can cross-reference downloaded files with a known malware database before permitting execution, adding an extra layer of security.
+2. **Guessing the password**
+This is generally **not considered** a type of attack as it is based more on passively trying possible passwords. However, it is still considered one of the most common method of stealing sensitive data.
+Most people use easy-to-guess passwords like "12345678" and "password". Additionally, it is common for people to incorporate their personal information like name, birtplace or birthdate in their passwords. Furthermore, using the same password in multiple places is also commonplace. Using the same password across multiple places poses a security risk if one of the websites that the user was using the same password gets compromised.
+    **Counter-Strategies**
+    - Using 2 or 3-factor authentication 
+    - Providing a limited number of (like 3) wrong password entries
+    - Instructing the staff about using certain password managers, so that they can just memorise a single password to decrypt multiple passwords 
+    - Instructing the staff to always check the authenticity of the website before entering their passwords.
 
 ### Software-based Attacks
 1. **Malwares**
