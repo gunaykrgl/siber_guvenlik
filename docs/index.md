@@ -1,7 +1,7 @@
 # Network Security Strategies and Applications
 This docs is created as a homework for the lecture: Network Security with Open Source Tools.
 
-Github Repository link: [gunaykrgl/siberguvenlik](https://github.com/gunaykrgl/siber_guvenlik/)
+Github Repository link: [gunaykrgl/siber_guvenlik](https://github.com/gunaykrgl/siber_guvenlik/)
 
 Github Pages link: [siber_guvenlik_ghPages](https://gunaykrgl.github.io/siber_guvenlik/)
 
