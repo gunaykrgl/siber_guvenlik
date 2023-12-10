@@ -14,6 +14,7 @@ Below are specific topics that are mentioned throughout the document
 1. Network Security Strategies
 
     a) Importance of physical, software-based and network security strategies
+    
     b) Strategic approaches for maintaining data safety
 
 2. Importance of Network Security Applications and Tools
