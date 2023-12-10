@@ -1,6 +1,11 @@
 # Network Security Strategies and Applications
 This docs is created as a homework for the lecture: Network Security with Open Source Tools.
 
+Github Repository link: [gunaykrgl/siberguvenlik]: https://github.com/gunaykrgl/siber_guvenlik/
+Github Pages link: (siber_guvenlik_ghPages)[https://gunaykrgl.github.io/siber_guvenlik/]
+
+**Note**: [n:Number] is a reference to the n-th entry in References
+
 Below are specific topics that are mentioned throughout the document
 
 **The Topics**:
@@ -23,7 +28,7 @@ Below are specific topics that are mentioned throughout the document
 ## Definition of Network Security
 Network security refers to the set of measures, policies and practices designed to protect the integrity, confidentiality and availability of computer networks and the data they transmit and store. [Source](https://study.com/academy/lesson/what-is-network-security-definition-fundamentals.html)
 ## Importance of Network Security
-In the definition above, network security was outlined as a framework designed to protect the integrity, confidentiality and the availability of computer networks. Let's delve into the significance of each of these elements:
+In the definition above, network security was outlined as a framework designed to protect the integrity, confidentiality and the availability[1] of computer networks. Let's delve into the significance of each of these elements:
 
 1. **Integrity**: Integrity refers to preserving the unaltered state of data free from unauthorized disruptions. 
 To illustrate the importance of data integrity, consider an algorithmic trading bot that relies on data fetched by a third-party provider. Imagine a scenario where a malicious user intercepts and modifies the price data transmitted via the API. Such an attack could compromise the data's integrity, leading to the algorithmic trading bot to execute an incorrect market order, potentially resulting in significant financial losses. 
@@ -41,7 +46,7 @@ As a second example, consider operating a bank where ensuring the integrity of d
 Physical attacks are the type of attacks that require the attacker to have physical access to a device in the network or a transfer medium used for the network (e.g Cables). They are based on exploiting the vulnerabilities on the first layer of the OSI model.
 
 1. **Cable Interception (Wire Tapping)**: 
-This attack is also known as "Man in the middle Attack" 
+This attack is also known as "Man in the middle Attack" [2]
 The attacker may sever a cable at a specific location and deploy a device, such as a Raspberry Pi, under their control. This device could be configured to intercept and duplicate incoming packets, sending an identical copy both to the intended destination and the attacker's device. Through this method, the attacker gains the ability to divert the network traffic through their own device, allowing for unauthorized access and potential interception of sensitive information (Compromising CONFIDENTIALITY).
 
     **Counter-Strategy**
@@ -93,7 +98,7 @@ Most people use easy-to-guess passwords like "12345678" and "password". Addition
 1. **Malwares**
 Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.
 (Could be used to compromise INTEGRITY, CONFIDENTIALITY OR AVAILABILITY)
-    **Counter-Strategies**
+    **Counter-Strategies [5]**
 
     - Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.
 
@@ -110,7 +115,7 @@ Malware is a broad term used to describe any type of malicious software. Such so
 A Distributed Denial of Service (DDoS) attack involves an initial stage where the attacker compromises a substantial number of independent small computers (called zombie computers). Then, the attacker uses the infected zombie computers to send a multitude of requests to a server, simultaneously. As a result of the sheer number of requests (from zombie computers), server may become unable to respond to legitimate requests. Consequently, this orchestrated flood of traffic can lead to network collapse, undermining the availability of services. For entities dependent on continuous and uninterrupted operation (like banking networks), DDoS attacks pose a significant and disruptive threat.
 (Compromising AVAILABILITY)
 
-    **Common types of DDoS attacks**
+    **Common types of DDoS attacks [4]**
 
     - Application layer attack: Different computers keep sending large number of simple http requests
     - Protocol attack: Protocol attacks exploit vulnerabilities in 3rd and 4th layers. An example of protocol attacks is SYN flood. In SYN flood, the attacker sends a large number of SYN packets to signify they want to make a TCP connection. Then, the server responds with SYN/ACK packets and starts waiting for an ACK packet. Attacker does not send the SYN/ACK package and causes server to keep an open port with each zombie computer. Once, there is not open ports left for the authentic requests, the server  becomes unable to function normally.
@@ -130,7 +135,7 @@ A fake DNS attack commonly involves the attacker positioning themselves between 
 
     **Counter-Measure**
     
-    - By using Domain Name System Security Extensions (DNSSEC), the communication with DNSSEC is signed. Therefore, the user's computer can verify whether the DNS record sent by the server is from the registrar itself.
+    - By using Domain Name System Security Extensions (DNSSEC)[3], the communication with DNSSEC is signed. Therefore, the user's computer can verify whether the DNS record sent by the server is from the registrar itself.
 
 ## Conclusion
 
@@ -140,19 +145,13 @@ Various attacks have been detailed in the preceding chapters, primarily focusing
 
 **Repository link**: [siber_guvenlik, github](https://github.com/gunaykrgl/siber_guvenlik/)
 
-The definitions for confidentiality, integrity and authenticity are taken from the following link:
-[CIA Triad, unitrends](
+1. [CIA Triad, unitrends](
 https://www.unitrends.com/blog/cia-triad-confidentiality-integrity-availability#:~:text=Confidentiality%20measures%20are%20designed%20to,readily%20accessible%20for%20authorized%20parties)
 
-Some information about cable interception section is taken from the following link:
-[Wire-tapping attacks, hackinglab](https://hackinglab.cz/en/blog/wiretapping/)
+2. [Wire-tapping attacks, infosectrain](https://www.infosectrain.com/blog/what-is-wiretapping-in-cybersecurity/)
 
-Some information about DNS spoofing and DNSSEC is taken from the following link:
-[DNSSEC, imperva](https://www.imperva.com/learn/application-security/dnssec/)
+3. [DNSSEC, imperva](https://www.imperva.com/learn/application-security/dnssec/)
 
-Some information about DDOS attacks are taken from following links:
-[About DDoS ,Cloudflare](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/#:~:text=A%20distributed%20denial%2Dof%2Dservice%20(DDoS)%20attack%20is,a%20flood%20of%20Internet%20traffic
-https://www.spiceworks.com/it-security/network-security/guest-article/load-balancers-security-architecture/#:~:text=Load%20balancers%20offer%20an%20extra,exhaust%20resources%20and%20saturate%20links)
+4. [About DDoS ,Cloudflare](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/)
 
-Some information about malwares and counter strategies against malware are taken from:
-[IDS, firewall and Antivirus: What you need to have installed, welivesecurity by eset](https://www.welivesecurity.com/2015/04/30/ids-firewall-antivirus-need-installed/)
+5. [IDS, firewall and Antivirus: What you need to have installed, welivesecurity by eset](https://www.welivesecurity.com/2015/04/30/ids-firewall-antivirus-need-installed/)
