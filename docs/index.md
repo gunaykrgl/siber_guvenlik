@@ -14,7 +14,7 @@ Below are specific topics that are mentioned throughout the document
 1. Network Security Strategies
 
     a) Importance of physical, software-based and network security strategies
-    
+
     b) Strategic approaches for maintaining data safety
 
 2. Importance of Network Security Applications and Tools
@@ -42,6 +42,7 @@ As a second example, consider operating a bank where ensuring the integrity of d
 
 ## Possible Attacks and Counter-Strategies
 **Note**: Given that networks depend on communication among numerous computers, securing individual computers is an important part within network security. Consequently, some of the attacks and counter-strategies mentioned below might appear more closely associated with computer security rather than network security.
+
 **Note**:  restricting permissions to only necessary interactions between nodes in the network contributes to a more distributed system, minimizing the impact of successful attacks on a single node. Since, this is related to the overall software architecture, this information is provided independently of specific attack. 
 
 ### Physical Attacks
@@ -53,7 +54,36 @@ The attacker may sever a cable at a specific location and deploy a device, such 
 
     **Counter-Strategy**
 
-    - Utilizing TLS encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.
+    - Utilizing TLS (Transport layer Security) encryption can impede an attacker's capacity to gather sensitive information from intercepted data packets. 
+    
+        TLS works as follows [7]:
+
+        1. The service that wants to implement TLS must get a TLS certificate
+
+        2. When the service gets TLS certificate, it is given a pair of private and public keys
+
+        3. When the user navigates to the website that uses TLS, the TLS handshake begins between the user's device and the web server. 
+        
+            During the TLS handshake the following steps are taken [8]:
+        
+            1. The user's web browser (Client) sends an initiation request that includes a random set of bytes known as "client random" details like which TLS version and cipher suites (A set of algorithms for hashing) the client supports
+            
+            2. The server replies with its SSL certificate (that includes the public key of the server), their chosen cipher suite and a random string of bytes called "server random"
+
+            3. The client verifies the server's SSL certificate by asking to the certificate authority
+
+            4. The client sends a random string of bytes called the "premaster secret" encrypted by the public key that the server specified in its certificate
+
+            5. The server decrypts the premaster secret by using its private key.
+
+            6. Both the server and the client create session keys from the client random, server random and premaster secret.
+
+            7. Client sends a "finished" message encrypted with a session key signifying it's ready.
+
+            8. Server sends a "finished" message encrypted with the session key signifying it's ready.
+            
+    
+    While the attacker can still have access to the encrypted packet, the formidable nature of TLS encryption, with a 2048-bit key, renders decryption challenging and significantly strengthens the protection of the data.
     
 2. **Inserting a malicious USB**:
 If an attacker gains physical access to a computer, they can employ various tactics, such as booting from a USB drive and injecting malicious code into low-level software like the BIOS. Since most antivirus software operates at the operating system level, it becomes challenging to detect malicious code running below this layer. This type of code can establish a backdoor, granting the attacker remote access to the compromised computer. Additionally, if the disk is not encrypted, the attacker can freely read all the data stored on the computer.
@@ -74,9 +104,11 @@ Social engineering based attacks encapsulate attacks that exploit the psychology
 There are two common methods of phishing, and their initial stages are similar. Initially, the attacker sends an email to the target from an address that closely resembles the actual email address of a known individual (e.g., the imitating email could be emily_1awson@gmail.com, while the original is emily_lawson@gmail.com). The subsequent methods diverge from this point:
 
     **a)** The attacker may replicate a familiar website, creating a fraudulent user interface identical to the original. When an authorized staff member, with access to sensitive information, enters data into a form on the fake website, the attacker gains access to the sensitive data, using the staff member's password.
+
     **b)** Alternatively, the attacker could set the website to automatically download malicious software onto the target's computer. That's a significant risk if the target's browser permits the automatic download and execution of JavaScript.
 
     (Compromising CONFIDENTIALITY)
+
     **Counter-Strategies**
     
     - Training staff to exercise caution with incoming emails, avoiding clicking on links and always verifying the sender's email address.
@@ -86,14 +118,19 @@ There are two common methods of phishing, and their initial stages are similar. 
     - Implementing firewalls to detect and block packets from and to suspicious websites.
     
     - Employing anti-malware software to identify and remove malware proactively. Such software can cross-reference downloaded files with a known malware database before permitting execution, adding an extra layer of security.
+
 2. **Guessing the password**
 This is generally **not considered** a type of attack as it is based more on passively trying possible passwords. However, it is still considered one of the most common method of stealing sensitive data.
 Most people use easy-to-guess passwords like "12345678" and "password". Additionally, it is common for people to incorporate their personal information like name, birtplace or birthdate in their passwords. Furthermore, using the same password in multiple places is also commonplace. Using the same password across multiple places poses a security risk if one of the websites that the user was using the same password gets compromised.
 (Compromising CONFIDENTIALITY)
+
     **Counter-Strategies**
     - Using 2 or 3-factor authentication 
+
     - Providing a limited number of (like 3) wrong password entries
+
     - Instructing the staff about using certain password managers, so that they can just memorise a single password to decrypt multiple passwords 
+
     - Instructing the staff to always check the authenticity of the website before entering their passwords.
 
 ### Software-based Attacks
@@ -161,3 +198,7 @@ https://www.unitrends.com/blog/cia-triad-confidentiality-integrity-availability#
 5. [About DDoS ,Cloudflare](https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/)
 
 6. [IDS, firewall and Antivirus: What you need to have installed, welivesecurity by eset](https://www.welivesecurity.com/2015/04/30/ids-firewall-antivirus-need-installed/)
+
+7. [Transport layer security, cloudflare](https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/)
+
+8. [Steps in a TLS handshake](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
