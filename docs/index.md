@@ -2,6 +2,7 @@
 This docs is created as a homework for the lecture: Network Security with Open Source Tools.
 
 Github Repository link: [gunaykrgl/siberguvenlik](https://github.com/gunaykrgl/siber_guvenlik/)
+
 Github Pages link: [siber_guvenlik_ghPages](https://gunaykrgl.github.io/siber_guvenlik/)
 
 **Note**: [n:Number] is a reference to the n-th entry in References
@@ -98,6 +99,7 @@ Most people use easy-to-guess passwords like "12345678" and "password". Addition
 1. **Malwares**
 Malware is a broad term used to describe any type of malicious software. Such software can be utilized to either pilfer data, compromising the confidentiality of the network, or disrupt network operations, thereby undermining its availability. Ransomware, a specific type of malware, can further exacerbate the availability issue by restricting access to specific files.
 (Could be used to compromise INTEGRITY, CONFIDENTIALITY OR AVAILABILITY)
+
     **Counter-Strategies [5]**
 
     - Anti-malware software can be used to check whether newly downloaded packages contain files that were previously identified as viruses. Centralized malware database are used in anti-malware softwares to list the knwon malwares.
@@ -119,6 +121,7 @@ A Distributed Denial of Service (DDoS) attack involves an initial stage where th
 
     - Application layer attack: Different computers keep sending large number of simple http requests
     - Protocol attack: Protocol attacks exploit vulnerabilities in 3rd and 4th layers. An example of protocol attacks is SYN flood. In SYN flood, the attacker sends a large number of SYN packets to signify they want to make a TCP connection. Then, the server responds with SYN/ACK packets and starts waiting for an ACK packet. Attacker does not send the SYN/ACK package and causes server to keep an open port with each zombie computer. Once, there is not open ports left for the authentic requests, the server  becomes unable to function normally.
+    
     **Counter-Strategies**
 
     - Load-balancing techniques can be used to distribute the traffic across multiple servers, so that the service can handle more requests.
