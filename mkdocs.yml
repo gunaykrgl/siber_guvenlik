@@ -1,1 +1,9 @@
-site_name: Network Security Strategies and applications
+site_name: Network Security Strategies
+
+nav:
+  - Home: index.md
+  - Github: "https://github.com/gunaykrgl/siber_guvenlik"
+  - Definition: "https://gunaykrgl.github.io/siber_guvenlik/#definition-of-network-security"
+  - Attacks and Defences: "https://gunaykrgl.github.io/siber_guvenlik/#possible-attacks-and-counter-strategies"
+  - Conclusion: "https://gunaykrgl.github.io/siber_guvenlik/#conclusion"
+  - References: "https://gunaykrgl.github.io/siber_guvenlik/#references"
